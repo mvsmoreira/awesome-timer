@@ -9,6 +9,7 @@ import {
 import {
   abortCycleAction,
   ActionTypes,
+  clearHistoryAction,
   createNewCycleAction,
   setActiveActionAsFinishedAction,
 } from '../reducers/cycles/actions'
@@ -28,6 +29,7 @@ interface CyclesContextData {
   setSecondsPassed: (seconds: number) => void
   createNewCycle: (data: CreateCycleData) => void
   abortCycle: () => void
+  clearHistory: () => void
 }
 
 interface CyclesContextProviderProps {
@@ -103,6 +105,10 @@ export const CyclesContextProvider = ({
     dispatch(abortCycleAction())
   }
 
+  const clearHistory = () => {
+    dispatch(clearHistoryAction())
+  }
+
   return (
     <CyclesContext.Provider
       value={{
@@ -114,6 +120,7 @@ export const CyclesContextProvider = ({
         setSecondsPassed,
         createNewCycle,
         abortCycle,
+        clearHistory,
       }}
     >
       {children}

@@ -13,6 +13,35 @@ export const HistoryContainer = styled.main`
   }
 `
 
+export const HistoryHeader = styled.header`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const ResetHistoryButton = styled.button`
+  border: 0;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  background: ${(props) => props.theme['red-500']};
+  color: ${(props) => props.theme['gray-100']};
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    background: ${(props) => props.theme['red-700']};
+  }
+`
+
 export const HistoryList = styled.div`
   flex: 1;
   overflow: auto;

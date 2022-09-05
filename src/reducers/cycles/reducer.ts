@@ -51,6 +51,12 @@ export const cyclesReducer = (state: CyclesState, action: any) => {
         activeCycleId: null,
       }
 
+    case ActionTypes.CLEAR_HISTORY:
+      return {
+        cycles: [],
+        activeCycleId: null,
+      }
+
     default:
       return state
   }
