@@ -4,6 +4,7 @@ export enum ActionTypes {
   CREATE_NEW_CYCLE = 'CREATE_NEW_CYCLE',
   ABORT_CURRENT_CYCLE = 'ABORT_CURRENT_CYCLE',
   SET_ACTIVE_CYCLE_AS_FINISHED = 'SET_ACTIVE_CYCLE_AS_FINISHED',
+  INIT_STORED = 'INIT_STORED',
 }
 
 export const createNewCycleAction = (newCycle: Cycle) => {

@@ -1,5 +1,4 @@
 import { ActionTypes } from './actions'
-
 export interface Cycle {
   id: string
   task: string
@@ -9,13 +8,16 @@ export interface Cycle {
   finishedDate?: Date
 }
 
-interface CyclesState {
+export interface CyclesState {
   cycles: Cycle[]
   activeCycleId: string | null
 }
 
 export const cyclesReducer = (state: CyclesState, action: any) => {
   switch (action.type) {
+    case ActionTypes.INIT_STORED:
+      return action.payload
+
     case ActionTypes.CREATE_NEW_CYCLE:
       return {
         ...state,
