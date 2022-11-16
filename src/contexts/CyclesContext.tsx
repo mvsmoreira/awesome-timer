@@ -60,7 +60,7 @@ export const CyclesContextProvider = ({
 
   useEffect(() => {
     const storedAsJSON = JSON.parse(
-      localStorage.getItem('@ignite-timer:cycles-state-1.0.0')!,
+      localStorage.getItem('@awesome-timer:cycles-state-1.0.0')!,
     )
     if (storedAsJSON) {
       dispatch({
@@ -73,7 +73,7 @@ export const CyclesContextProvider = ({
   useEffect(() => {
     if (cyclesState !== initialState) {
       localStorage.setItem(
-        '@ignite-timer:cycles-state-1.0.0',
+        '@awesome-timer:cycles-state-1.0.0',
         JSON.stringify(cyclesState),
       )
     }
